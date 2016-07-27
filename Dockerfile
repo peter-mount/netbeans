@@ -18,7 +18,8 @@ RUN curl -jkL \
 	-o /tmp/netbeans-8.1-201510222201.zip \
 	http://download.netbeans.org/netbeans/8.1/final/zip/netbeans-8.1-201510222201.zip &&\
     cd /opt;unzip -q /tmp/netbeans-8.1-201510222201.zip &&\
-    echo "netbeans_jdkhome=\"/opt/jdk\"" >>/opt/netbeans/etc/netbeans.conf
+    echo "netbeans_jdkhome=\"/opt/jdk\"" >>/opt/netbeans/etc/netbeans.conf &&\
+    rm -f /tmp/netbeans*
 
 RUN addgroup -g 1000 user &&\
     adduser -h /home/user \
